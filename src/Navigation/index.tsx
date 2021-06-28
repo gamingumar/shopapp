@@ -4,7 +4,7 @@
  * File Created: Thursday, 27th February 2020 1:52:40 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Monday, 28th June 2021 10:19:08 pm
+ * Last Modified: Tuesday, 29th June 2021 3:05:42 am
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
@@ -16,14 +16,15 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { SignInScreen } from '../Screens/Auth/SignInScreen';
 import { SignUpScreen } from '../Screens/Auth/SignUpScreen';
 import { RouteKeys } from './RouteKeys';
-import { HomeScreen } from '../Screens/HomeScreen';
+import { ProfileScreen } from '../Screens/ProfileScreen';
 import { storageGet } from '../Lib';
 import { AppContext } from '../Services/AppContext';
-import { ILoginResponse } from '../Services/Interfaces/AppInterface';
+import { ILoginResponse, IUser } from '../Services/Interfaces/AppInterface';
 import { setGlobalUser } from '../Services/GlobalService';
 import { Config } from '../Config';
 import { Colors } from '../Themes/Colors';
 import { Loader } from '../Components/Loader';
+import { HomeTabs } from './HomeTabs';
 
 const Stack = createStackNavigator();
 
@@ -60,7 +61,7 @@ function AuthStack() {
       <Stack.Screen
         name={RouteKeys.Home}
         options={{ gestureEnabled: false, headerShown: false }}
-        component={HomeScreen}
+        component={HomeTabs}
       />
     </Stack.Navigator>
   );
@@ -81,7 +82,7 @@ export function AppNavigation() {
    * Restore App Data from AsyncStorage and set loading to false
    */
   const _getData = async () => {
-    const userData: ILoginResponse = await storageGet("user");
+    const userData: IUser = await storageGet("user");
 
     // if (userData) {
     updateUser(userData); // update data in context and storage

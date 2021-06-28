@@ -4,7 +4,7 @@
  * File Created: Thursday, 27th February 2020 1:52:40 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Monday, 28th June 2021 9:06:28 pm
+ * Last Modified: Tuesday, 29th June 2021 1:28:36 am
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
@@ -20,6 +20,9 @@ export const RouteKeys = {
   Welcome: "Welcome",
 
   Home: "Home",
+  ProductsList: "ProductsList",
+  ProductDetail: "ProductDetail",
+  Basket: "Basket",
 }
 
 type TKeys = keyof typeof RouteKeys

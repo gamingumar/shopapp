@@ -4,7 +4,7 @@
  * File Created: Thursday, 27th February 2020 1:52:40 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Monday, 28th June 2021 9:31:59 pm
+ * Last Modified: Tuesday, 29th June 2021 1:10:21 am
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
@@ -14,7 +14,6 @@ const { manifest } = Constants;
 
 import { version, apiLink } from "../../package.json";
 import { RouteKeys } from "../Navigation/RouteKeys";
-
 
 // import DeviceInfo from 'react-native-device-info';
 
@@ -35,7 +34,7 @@ const APP_MODE: EAppMode = EAppMode.TEST; //! CHANGE THIS TO CHANGE APP MODE
 
 const links = {
   production: {
-    api: "https://whilegeek.com/"
+    api: "https://whilegeek.com/",
   },
   test: {
     api: "https://gamingumar.com/",
@@ -51,7 +50,6 @@ const IS_PRODUCTION = links["production"].api === links[APP_MODE].api;
 const API_URL = links[APP_MODE].api;
 
 export let Config = {
-
   APP_VERSION: `v${version} \nAPI Support: ${apiLink} \n${
     !IS_PRODUCTION ? `(TEST) ${API_URL}` : ""
   }`,
@@ -73,4 +71,12 @@ export let Config = {
   DEMO_PASSWORD: IS_PRODUCTION ? "" : "1234",
 
   IS_PRODUCTION,
-}
+
+  DUMMY_USER: {
+    email: "umaraamer@gmail.com",
+    fullName: "Umar Aamer",
+    phone: "+923335251661",
+    photo: "https://avatars.githubusercontent.com/u/5675313?v=4",
+    username: "gamingumar",
+  },
+};

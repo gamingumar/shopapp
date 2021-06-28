@@ -4,23 +4,53 @@
  * File Created: Tuesday, 29th June 2021 12:33:49 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Tuesday, 29th June 2021 12:36:28 am
+ * Last Modified: Tuesday, 29th June 2021 2:57:27 am
  * -----
  * Copyright 2021 - 2021 WhileGeek, https://umar.tech
  */
-
-
-import React from 'react';
-import {View} from 'react-native';
+import React, { useState } from 'react';
+import {FlatList, ScrollView, View} from 'react-native';
 import {Text} from '../../Components/Text';
 import { SafeContainer } from '../../Components/SafeContainer';
 import { Colors } from '../../Themes/Colors';
+import { Product } from './Product';
+
+const products = [
+  {
+    name: "Item 1"
+  },
+  {
+    name: "Item 2",
+  },
+  {
+    name: "Item 3",
+  },
+  {
+    name: "Item 4",
+  },
+  {
+    name: "Item 5",
+  },
+]
 
 export const ProductsListScreen = () => {
+  const [loading, setLoading] = useState(false)
+
+  const _loadData = () => {
+
+  }
+
   return (
-    <SafeContainer style={styles.container}>
-      <Text style={styles.titleStyle}>ProductsListScreen</Text>
-    </SafeContainer>
+    <View style={styles.container}>
+      <FlatList
+        data={products}
+        renderItem={() => <Product />}
+        numColumns={2}
+        refreshing={loading}
+        onRefresh={_loadData}
+        keyExtractor={(item) => item.name}
+      />
+    </View>
   );
 };
 
