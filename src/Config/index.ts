@@ -4,7 +4,7 @@
  * File Created: Thursday, 27th February 2020 1:52:40 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Tuesday, 29th June 2021 1:10:21 am
+ * Last Modified: Thursday, 1st July 2021 2:31:20 am
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
@@ -34,10 +34,10 @@ const APP_MODE: EAppMode = EAppMode.TEST; //! CHANGE THIS TO CHANGE APP MODE
 
 const links = {
   production: {
-    api: "https://whilegeek.com/",
+    api: "https://my-json-server.typicode.com/benirvingplt/",
   },
   test: {
-    api: "https://gamingumar.com/",
+    api: "https://my-json-server.typicode.com/benirvingplt/",
   },
   local: {
     api: hostIp?.concat(`:3002/`),
