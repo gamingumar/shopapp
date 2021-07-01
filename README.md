@@ -1,6 +1,8 @@
 # shopapp
 E Commerce mobile application built using React Native
 
+https://expo.io/@gamingumar/shopapp
+
 ### Setup
 
 ```
@@ -14,6 +16,7 @@ expo start
 - Basket / Cart
 - Add Products to Basket
 - Edit Quantity / Remove items from basket.
+
 
 
 ### UI
