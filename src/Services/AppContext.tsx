@@ -4,7 +4,7 @@
  * File Created: Sunday, 14th July 2019 1:12:15 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Monday, 28th June 2021 9:31:59 pm
+ * Last Modified: Thursday, 1st July 2021 5:56:15 am
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
@@ -13,33 +13,37 @@ import React, {createContext, useState, useEffect} from 'react';
 import {
   log,
   storageUpdate,
-  storageGet,
-  is_android,
   _cloneDeep,
   storageClear,
 } from '../Lib';
 import {setGlobalLogout, setGlobalUser} from './GlobalService';
-import { IUser } from './Interfaces/AppInterface';
+import { ICartItem, IUser } from './Interfaces/AppInterface';
 
 
 interface IAppContext {
   logout: Function;
-  logoutIfTimeout: Function;
+  // logoutIfTimeout: Function;
   user: IUser | null;
   updateUser(newUser: IUser | null): void;
+  cart: ICartItem[];
+  updateCart: (newCart:ICartItem[]) => void;
 }
 
 export const AppContext = createContext<IAppContext>({
   logout: () => {},
-  logoutIfTimeout: () => {},
+  // logoutIfTimeout: () => {},
   user: null,
-  updateUser: (newUser: IUser | null) => null
+  updateUser: (newUser: IUser | null) => null,
+  cart: [],
+  updateCart: (newCart) => {}
 });
 
 
 export const AppProvider: React.FC = props => {
   // ? future use for logged in user
   const [user, setUser] = useState<IUser | null>(null);
+
+  const [cart, setCart] = useState<ICartItem[]>([])
 
   // Update Data in User Context and Storage
   const updateUser = async (newUser: IUser | null) => {
@@ -61,6 +65,11 @@ export const AppProvider: React.FC = props => {
 
     setContextLoading(l);
   };
+
+
+  const updateCart = async (newCart:ICartItem[]) => {
+    setCart(newCart);
+  }
 
 
   /**
@@ -91,10 +100,10 @@ export const AppProvider: React.FC = props => {
         user,
         updateUser,
 
-        logout,
+        cart,
+        updateCart,
 
-        contextLoading,
-        updateContextLoading,
+        logout,
       }}>
       {props.children}
     </AppContext.Provider>

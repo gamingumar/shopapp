@@ -4,7 +4,7 @@
  * File Created: Tuesday, 29th June 2021 12:36:53 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 1st July 2021 2:56:08 am
+ * Last Modified: Thursday, 1st July 2021 4:07:39 am
  * -----
  * Copyright 2021 - 2021 WhileGeek, https://umar.tech
  */
@@ -27,7 +27,9 @@ export const Product = ({ product }: IProductItem) => {
   const navigation = useNavigation();
 
   const _navigate = () => {
-    navigation.navigate(RouteKeys.ProductDetail);
+    navigation.navigate(RouteKeys.ProductDetail, {
+      product
+    });
   };
 
   return (

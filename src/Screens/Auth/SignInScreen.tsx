@@ -4,7 +4,7 @@
  * File Created: Monday, 16th December 2019 11:30:34 pm
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Tuesday, 29th June 2021 1:19:22 am
+ * Last Modified: Thursday, 1st July 2021 5:58:50 am
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
@@ -15,20 +15,16 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { TextInput, Button, Subheading, Title } from "react-native-paper";
 import { Text } from "../../Components/Text";
-import { Image } from "../../Components/Image";
-import { Images } from "../../Themes/Images";
 import { Colors } from "../../Themes/Colors";
 import { vs, s, ms } from "react-native-size-matters";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { useNavigation } from '@react-navigation/native';
 import { log, showAlert } from "../../Lib";
-import { Loader } from "../../Components/Loader";
 import { DropDownAlertHolder, DropdownAlertType } from "../../Components/DropDownAlertHolder";
 import { AppContext } from "../../Services/AppContext";
 import { Config } from "../../Config";
 import { useScreenOrientation } from "../../Hooks";
 import { handleApiError, handleCatchError } from "../../Lib/ErrorHandling";
-import { ApiResponse } from "../../Services/api-client";
 import { SafeContainer } from "../../Components/SafeContainer";
 import { RouteKeys } from "../../Navigation/RouteKeys";
 import { AuthApi } from "../../Services/API/AuthApi";

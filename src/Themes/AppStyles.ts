@@ -4,17 +4,18 @@
  * File Created: Thursday, 27th February 2020 1:52:40 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Monday, 28th June 2021 8:58:55 pm
+ * Last Modified: Thursday, 1st July 2021 5:29:00 am
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
 
-import { TextStyle, ViewStyle } from "react-native";
 import { Colors } from "./Colors";
 
 export const AppStyles = {
   centralize: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center'
+    flexDirection: 'row' as 'row',
+    alignItems: 'center' as 'center',
+    justifyContent: 'center' as 'center',
   },
   shadow1: {
     shadowOpacity: 0.1,

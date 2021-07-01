@@ -4,7 +4,7 @@
  * File Created: Tuesday, 29th June 2021 1:23:24 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Tuesday, 29th June 2021 3:05:42 am
+ * Last Modified: Thursday, 1st July 2021 5:58:29 am
  * -----
  * Copyright 2021 - 2021 WhileGeek, https://umar.tech
  */
@@ -13,15 +13,11 @@ import * as React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import {
   Ionicons,
-  MaterialCommunityIcons,
-  SimpleLineIcons,
-  MaterialIcons,
   FontAwesome,
   Entypo,
 } from "@expo/vector-icons";
 import {
   createStackNavigator,
-  StackNavigationOptions,
 } from "@react-navigation/stack";
 import { RouteKeys } from "./RouteKeys";
 
@@ -100,10 +96,16 @@ export function ProductStack() {
       <Stack.Screen
         name={RouteKeys.ProductsList}
         component={ProductsListScreen}
+        options={{
+          headerTitle: "Products"
+        }}
       />
       <Stack.Screen
         name={RouteKeys.ProductDetail}
         component={ProductDetailScreen}
+        options={{
+          headerTitle: "Buy Product"
+        }}
       />
     </Stack.Navigator>
   );
