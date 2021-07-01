@@ -5,10 +5,11 @@
     "name": "shopapp",
     "slug": "shopapp",
     "version": "1.0.0",
+    "privacy": "public",
     "assetBundlePatterns": [
       "**/*"
     ],
-    "description": "E Commerce mobile app",
+    "description": "E Commerce mobile app.",
     "githubUrl": "https://github.com/gamingumar/shopapp"
   }
 }
