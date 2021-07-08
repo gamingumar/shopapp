@@ -4,7 +4,7 @@
  * File Created: Tuesday, 29th June 2021 2:18:45 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 1st July 2021 5:59:12 am
+ * Last Modified: Thursday, 8th July 2021 10:02:00 pm
  * -----
  * Copyright 2021 - 2021 WhileGeek, https://umar.tech
  */
@@ -52,7 +52,7 @@ export const CartScreen = () => {
   return (
     <ScrollView style={styles.container}>
       {cart.map((c) => (
-        <View style={styles.itemRow}>
+        <View style={styles.itemRow} key={c.product.id}>
           <View>
             <Image
               source={{ uri: c.product.img }}

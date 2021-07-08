@@ -4,7 +4,7 @@
  * File Created: Thursday, 27th February 2020 1:52:40 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Tuesday, 29th June 2021 3:05:42 am
+ * Last Modified: Thursday, 8th July 2021 10:03:14 pm
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
@@ -118,7 +118,8 @@ export function AppNavigation() {
 
   return (
     <NavigationContainer>
-      {user ? <AuthStack /> : <NoAuthStack />}
+      {/* {user ? <AuthStack /> : <NoAuthStack />} */}
+      <AuthStack />
     </NavigationContainer>
   );
 }

@@ -4,7 +4,7 @@
  * File Created: Tuesday, 29th June 2021 1:23:24 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 1st July 2021 5:58:29 am
+ * Last Modified: Thursday, 8th July 2021 10:01:00 pm
  * -----
  * Copyright 2021 - 2021 WhileGeek, https://umar.tech
  */
@@ -54,11 +54,11 @@ export const HomeTabs: React.FC = () => {
               IconComponent = FontAwesome;
               iconName = "trophy";
               break;
-            case RouteKeys.Home:
-              IconComponent = Entypo;
-              iconName = "text-document-inverted";
-              iconName = "v-card";
-              break;
+            // case RouteKeys.Home:
+            //   IconComponent = Entypo;
+            //   iconName = "text-document-inverted";
+            //   iconName = "v-card";
+            //   break;
           }
 
           return (
@@ -77,11 +77,11 @@ export const HomeTabs: React.FC = () => {
         component={CartStack}
         options={{ tabBarLabel: "Basket" }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name={RouteKeys.Home}
         component={ProfileScreen}
         options={{ tabBarLabel: "Me" }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 };
