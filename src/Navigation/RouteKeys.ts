@@ -14,11 +14,6 @@
  * GU - App Route Keys
  */
 export const RouteKeys = {
-  SplashScreen: "Splash",
-  SignIn: "SignIn",
-  SignUp: "SignUp",
-  Welcome: "Welcome",
-
   Home: "Home",
   ProductsList: "ProductsList",
   ProductDetail: "ProductDetail",

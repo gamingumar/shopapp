@@ -4,14 +4,13 @@
  * File Created: Thursday, 27th February 2020 1:52:40 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Monday, 28th June 2021 9:53:26 pm
+ * Last Modified: Wednesday, 14th July 2021 4:55:27 pm
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
 
 import { DefaultTheme } from "react-native-paper";
 import {Colors} from "./Colors";
-import {Fonts} from "./Fonts";
 import {Images} from "./Images";
 
 export const appTheme = {
@@ -32,6 +31,5 @@ export const appTheme = {
 
 export default {
   Colors,
-  Fonts,
   Images
 };

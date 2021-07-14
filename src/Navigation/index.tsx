@@ -4,7 +4,7 @@
  * File Created: Thursday, 27th February 2020 1:52:40 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 8th July 2021 10:03:14 pm
+ * Last Modified: Wednesday, 14th July 2021 4:46:33 pm
  * -----
  * Copyright 2019 - 2021 WhileGeek, https://umar.tech
  */
@@ -13,13 +13,10 @@ import React from 'react';
 import { View, ViewStyle } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { SignInScreen } from '../Screens/Auth/SignInScreen';
-import { SignUpScreen } from '../Screens/Auth/SignUpScreen';
 import { RouteKeys } from './RouteKeys';
-import { ProfileScreen } from '../Screens/ProfileScreen';
 import { storageGet } from '../Lib';
 import { AppContext } from '../Services/AppContext';
-import { ILoginResponse, IUser } from '../Services/Interfaces/AppInterface';
+import { IUser } from '../Services/Interfaces/AppInterface';
 import { setGlobalUser } from '../Services/GlobalService';
 import { Config } from '../Config';
 import { Colors } from '../Themes/Colors';
@@ -28,27 +25,6 @@ import { HomeTabs } from './HomeTabs';
 
 const Stack = createStackNavigator();
 
-function NoAuthStack() {
-  return (
-    <Stack.Navigator
-      // headerMode="none"
-      screenOptions={{
-        gestureEnabled: false,
-      }}
-    >
-      <Stack.Screen
-        name={RouteKeys.SignIn}
-        component={SignInScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name={RouteKeys.SignUp}
-        component={SignUpScreen}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
-}
 
 function AuthStack() {
   return (
@@ -84,16 +60,9 @@ export function AppNavigation() {
   const _getData = async () => {
     const userData: IUser = await storageGet("user");
 
-    // if (userData) {
     updateUser(userData); // update data in context and storage
-    // }
 
-    // if (userData) {
-    // this is to be used for all future api calls
     setGlobalUser(userData);
-    // }
-
-    // setLoading(false);
 
     navigateTimeout = setTimeout(() => {
       setLoading(false);
@@ -108,17 +77,8 @@ export function AppNavigation() {
     );
   }
 
-  // return <SideDrawer />
-
-  // return (
-  //   <NavigationContainer>
-  //     <AuthStack />
-  //   </NavigationContainer>
-  // );
-
   return (
     <NavigationContainer>
-      {/* {user ? <AuthStack /> : <NoAuthStack />} */}
       <AuthStack />
     </NavigationContainer>
   );

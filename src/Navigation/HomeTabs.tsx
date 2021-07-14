@@ -4,7 +4,7 @@
  * File Created: Tuesday, 29th June 2021 1:23:24 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 8th July 2021 10:01:00 pm
+ * Last Modified: Wednesday, 14th July 2021 4:49:59 pm
  * -----
  * Copyright 2021 - 2021 WhileGeek, https://umar.tech
  */
@@ -14,7 +14,6 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import {
   Ionicons,
   FontAwesome,
-  Entypo,
 } from "@expo/vector-icons";
 import {
   createStackNavigator,
@@ -26,7 +25,6 @@ import { ms } from "react-native-size-matters";
 import { ProductsListScreen } from "../Screens/Products/ProductsListScreen";
 import { CartScreen } from "../Screens/Cart/CartScreen";
 import { ProductDetailScreen } from "../Screens/Products/ProductDetailScreen";
-import { ProfileScreen } from "../Screens/ProfileScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
